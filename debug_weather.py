@@ -56,7 +56,7 @@ def weather_loop(icon):
 
 def create_icon_image():
     try:
-        img = Image.new("RGB", (64, 64), "sky-blue")
+        img = Image.new("RGB", (64, 64), "skyblue")
         draw = ImageDraw.Draw(img)
         draw.text((10, 20), "☀", fill="white")
         print("アイコン画像作成完了")
