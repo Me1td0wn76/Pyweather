@@ -37,9 +37,11 @@ def show_weather():
     print(f"天気を表示中: {CONFIG}")
     weather = fetch_forecast(CONFIG["code"])
     root = tk.Tk()
-    root.withdraw()
+    root.withdraw()  # メインウィンドウを非表示
+    root.attributes('-topmost', True)  # 最前面に表示
     messagebox.showinfo(f"{CONFIG['name']}の天気概況", weather)
-    root.destroy()
+    root.quit()  # イベントループを終了
+    root.destroy()  # ウィンドウを破棄
 
 def weather_loop(icon):
     print("天気ループ開始")
